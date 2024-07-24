@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Responsiva</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Garante que não haja rolagem horizontal */
+        }
+
+        body {
+            background: url('inicial_fundo.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header img {
+            max-width: 200px; /* Ajusta o tamanho da logo */
+            height: auto;
+        }
+
+        .container {
+            text-align: center;
+            padding: 0 20px; /* Adiciona espaçamento lateral */
+            flex-grow: 1; /* Permite que o container expanda para ocupar o espaço disponível */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Move o conteúdo para o rodapé */
+        }
+
+        .info-text {
+            margin-top: 20px; /* Espaço acima do texto */
+            font-size: 18px; /* Aumenta o tamanho da fonte do texto */
+        }
+
+        .login-link {
+            color: yellow;
+            text-decoration: none;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-bottom: 20px; /* Espaço abaixo do botão */
+        }
+
+        .register-btn {
+            background-color: white; /* Altere esta cor para a cor desejada */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 14px 30px; /* Ajuste o padding para tornar o botão mais largo */
+            font-size: 18px; /* Aumenta o tamanho da fonte do botão */
+            cursor: pointer;
+            min-width: 200px; /* Define uma largura mínima para o botão */
+        }
+
+        .register-btn:hover {
+            background-color: black; /* Altere esta cor para a cor desejada ao passar o mouse */
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .header img {
+                max-width: 150px; /* Ajusta o tamanho da logo em telas pequenas */
+            }
+
+            .register-btn {
+                font-size: 16px; /* Ajusta o tamanho da fonte do botão em telas pequenas */
+                padding: 12px 24px; /* Ajusta o tamanho do botão em telas pequenas */
+                min-width: 150px; /* Ajusta a largura mínima em telas pequenas */
+            }
+
+            .info-text {
+                font-size: 16px; /* Ajusta o tamanho da fonte do texto em telas pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo">
+    </header>
+    <div class="container">
+        <footer class="footer">
+            <button class="register-btn">Cadastre-se</button>
+        </footer>
+        <p class="info-text">Você já tem uma conta? <a href="#" class="login-link">Login</a></p>
+    </div>
+</body>
+</html>
