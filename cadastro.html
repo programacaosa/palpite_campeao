@@ -3,130 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cria Conta</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
             font-family: Arial, sans-serif;
-            background: url('inicial_fundo.png') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .background-image {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
+            background: url('inicial_fundo.png') no-repeat center center/cover;
             z-index: -1;
         }
 
         .container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(to bottom left, rgba(20, 34, 102, 0.9), rgba(255, 255, 0, 0.3)); /* Gradiente do azul escuro para o amarelo claro */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(90, 92, 136, 0.056); /* Cor #5A5C88 com 1.6% de opacidade */
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .logo-image {
-            max-width: 150px;
-            height: auto;
-            margin: 20px 0;
+            align-items: center;
+            border-radius: 35px 35px 0 0; /* Arredondar somente a parte superior */
+            border: 1px solid rgba(73, 101, 223, 0.2); /* Bordas com a mesma cor e opacidade do fundo */
         }
 
         h2 {
-            font-size: 24px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
+            margin: 0 0 20px;
+            color: #FFFFFF; /* Texto em branco */
         }
 
-        .back-arrow {
-            position: absolute;
-            left: -40px; /* Ajusta a posição da seta */
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
+        .logo-image {
+            width: 80%; /* Ajuste a largura da imagem conforme necessário */
+            max-width: 300px; /* Largura máxima da imagem */
+            margin: 0 0 20px; /* Espaço abaixo da imagem */
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center; /* Centraliza todos os itens do formulário */
         }
 
         .input-wrapper {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.6);
+            position: relative;
+            width: 70%; /* Largura total do container do input */
+            max-width: 250px; /* Largura máxima dos campos de entrada */
+        }
+
+        .input-wrapper input {
+            padding: 8px 8px 8px 30px; /* Padding para dar espaço para o ícone */
+            width: 100%; /* Largura total do campo de entrada */
+            background: rgba(255, 255, 255, 0.5); /* Fundo transparente com leve cor branca */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 12px; /* Tamanho da fonte menor */
+            color: gray; /* Cor do texto cinza claro */
+            box-sizing: border-box; /* Inclui padding e border na largura total */
         }
 
         .input-wrapper i {
-            margin-right: 10px;
-        }
-
-        input {
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 16px;
-            flex: 1;
-        }
-
-        input::placeholder {
-            color: #ccc;
-        }
-
-        .input-wrapper input:focus {
-            outline: none;
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray; /* Cor do ícone */
         }
 
         button {
-            background-color: white;
-            color: black;
+            padding: 10px;
+            width: 100%; /* Largura total do botão */
+            max-width: 250px; /* Largura máxima do botão */
+            background-color: #FFB600;
             border: none;
-            border-radius: 5px;
-            padding: 14px 30px;
-            font-size: 18px;
+            border-radius: 8px;
             cursor: pointer;
-            min-width: 200px;
-            text-align: center;
+            font-weight: bold;
+            color: black; /* Texto preto */
+            text-align: center; /* Centralizar texto dentro do botão */
+            box-sizing: border-box; /* Inclui padding e border na largura total */
         }
 
-        button:hover {
-            background-color: black;
-            color: white;
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                max-width: 90%;
+            }
+
+            .input-wrapper, button {
+                width: 100%; /* Ajusta a largura dos campos e botão para telas menores */
+            }
         }
     </style>
 </head>
 <body>
     <div class="background-image"></div>
     <div class="container">
-        <h2>
-            <a href="home.html" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
-            Cria Conta
-        </h2>
-        <img src="img.png" alt="Logo" class="logo-image">
+        <h2>Cria Conta</h2>
+        <img src="img.png" alt="Logo" class="logo-image"> <!-- Imagem abaixo do título -->
         <form action="register.php" method="post">
             <div class="input-wrapper">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user"></i> <!-- Ícone de usuário -->
                 <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
             </div>
 
             <div class="input-wrapper">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope"></i> <!-- Ícone de e-mail -->
                 <input type="email" id="email" name="email" placeholder="Email" required>
             </div>
 
-            <!-- Adicione outros campos conforme necessário -->
-
-            <button type="submit">Cadastrar</button>
+            <button type="submit">Inscrever-se</button>
         </form>
     </div>
 </body>
