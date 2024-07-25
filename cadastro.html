@@ -101,6 +101,28 @@
             box-sizing: border-box; /* Inclui padding e border na largura total */
         }
 
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaçamento entre as logos */
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 30px; /* Ajuste o tamanho das logos conforme necessário */
+            height: auto;
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 90%;
@@ -131,6 +153,13 @@
 
             <button type="submit">Inscrever-se</button>
         </form>
+        <div class="footer">
+            <p>Ou cadastre-se com</p>
+            <div class="social-icons">
+                <a href="#"><img src="icon_google.png" alt="Google"></a>
+                <a href="#"><img src="icon_apple.png" alt="Apple"></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
