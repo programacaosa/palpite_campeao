@@ -14,29 +14,30 @@
     <div id="games" class="row"></div>
 
     <h2 class="mt-5">Análise da IA</h2>
-    <textarea class="form-control" rows="3" placeholder="Digite suas observações ou resultados da análise aqui..."></textarea>
-    <button class="btn btn-primary mt-3">Gerar Análise</button>
+    <textarea id="analysisInput" class="form-control" rows="3" placeholder="Digite suas observações ou resultados da análise aqui..."></textarea>
+    <button id="generateAnalysis" class="btn btn-primary mt-3">Gerar Análise</button>
+    <div id="aiResponse" class="mt-4"></div>
 </div>
 
 <script>
-    // Dados fictícios dos jogos
+    // Dados fictícios dos jogos com times reais
     const games = [
         {
-            home: { name: 'Time A', logo: 'https://via.placeholder.com/100?text=Time+A' },
-            away: { name: 'Time B', logo: 'https://via.placeholder.com/100?text=Time+B' },
-            odds: { home: 1.5, draw: 3.0, away: 2.5 },
+            home: { name: 'Flamengo', logo: 'https://upload.wikimedia.org/wikipedia/en/6/67/Flamengo_logo.svg' },
+            away: { name: 'São Paulo', logo: 'https://upload.wikimedia.org/wikipedia/en/0/05/Sao_Paulo_FC_logo.svg' },
+            odds: { home: 1.75, draw: 3.20, away: 4.00 },
             goals: { home: 2, away: 1 }
         },
         {
-            home: { name: 'Time C', logo: 'https://via.placeholder.com/100?text=Time+C' },
-            away: { name: 'Time D', logo: 'https://via.placeholder.com/100?text=Time+D' },
-            odds: { home: 2.0, draw: 3.5, away: 1.8 },
+            home: { name: 'Palmeiras', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Palmeiras_logo.svg' },
+            away: { name: 'Corinthians', logo: 'https://upload.wikimedia.org/wikipedia/pt/8/83/Corinthians_logo.svg' },
+            odds: { home: 2.10, draw: 3.10, away: 3.50 },
             goals: { home: 1, away: 1 }
         },
         {
-            home: { name: 'Time E', logo: 'https://via.placeholder.com/100?text=Time+E' },
-            away: { name: 'Time F', logo: 'https://via.placeholder.com/100?text=Time+F' },
-            odds: { home: 1.8, draw: 2.8, away: 2.2 },
+            home: { name: 'Grêmio', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Logo_Gremio.svg' },
+            away: { name: 'Internacional', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Internacional_logo.svg' },
+            odds: { home: 2.50, draw: 2.90, away: 2.70 },
             goals: { home: 0, away: 3 }
         },
     ];
@@ -62,6 +63,20 @@
             gamesContainer.appendChild(col);
         });
     }
+
+    // Função para gerar resposta da "IA"
+    function generateAnalysis() {
+        const responses = [
+            "O Flamengo mostrou um desempenho sólido e tem boas chances de vencer nos próximos jogos.",
+            "O empate foi justo, mas o Palmeiras precisa melhorar a defesa para evitar mais gols.",
+            "O Internacional dominou o jogo e parece estar em ótima forma para a próxima partida."
+        ];
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        document.getElementById('aiResponse').innerText = randomResponse;
+    }
+
+    // Evento para gerar análise ao clicar no botão
+    document.getElementById('generateAnalysis').addEventListener('click', generateAnalysis);
 
     displayGames();
 </script>
