@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análises Esportivas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center">Análises Esportivas</h1>
+    <div id="games" class="row"></div>
+
+    <h2 class="mt-5">Análise da IA</h2>
+    <textarea class="form-control" rows="3" placeholder="Digite suas observações ou resultados da análise aqui..."></textarea>
+    <button class="btn btn-primary mt-3">Gerar Análise</button>
+</div>
+
+<script>
+    const apiKey = 'SUA_CHAVE_API'; // Substitua pela sua chave da API-Football
+    const leagueId = '1'; // ID da liga (por exemplo, Premier League)
+
+    async function fetchGames() {
+        const response = await fetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${leagueId}&season=2023`, {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+                'x-rapidapi-key': apiKey
+            }
+        });
+        const data = await response.json();
+        displayGames(data.response);
+    }
+
+    function displayGames(games) {
+        const gamesContainer = document.getElementById('games');
+        games.forEach(game => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4 text-center';
+
+            const homeTeam = game.teams.home.name;
+            const awayTeam = game.teams.away.name;
+            const homeLogo = game.teams.home.logo;
+            const awayLogo = game.teams.away.logo;
+
+            col.innerHTML = `
+                <img src="${homeLogo}" alt="${homeTeam}" class="team-logo">
+                <h5>${homeTeam}</h5>
+                <p>Odds Casa: ${Math.random().toFixed(2)}</p>
+                <img src="${awayLogo}" alt="${awayTeam}" class="team-logo">
+                <h5>${awayTeam}</h5>
+                <p>Odds Fora: ${Math.random().toFixed(2)}</p>
+            `;
+            gamesContainer.appendChild(col);
+        });
+    }
+
+    fetchGames();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
