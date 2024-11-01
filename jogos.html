@@ -7,52 +7,60 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #00264d, #00509e);
+            color: white;
             font-family: Arial, sans-serif;
+            min-height: 100vh;
         }
         h1 {
-            color: #343a40;
-            margin-bottom: 30px;
+            text-align: center;
+            margin: 20px 0;
         }
         .team-logo {
-            width: 100px;
+            width: 80px;
             height: auto;
             margin: 10px 0;
         }
         .game-card {
-            background-color: #ffffff;
-            border: 1px solid #ced4da;
-            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
             transition: transform 0.2s;
         }
         .game-card:hover {
             transform: scale(1.05);
         }
         .analysis-section {
-            background-color: #ffffff;
-            border: 1px solid #ced4da;
-            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
             padding: 20px;
             margin-top: 30px;
         }
         #aiResponse {
             margin-top: 20px;
             font-style: italic;
-            color: #495057;
+            color: #d1e8ff;
+        }
+        .header-logo {
+            max-width: 150px;
+            margin: 20px auto;
+            display: block;
         }
     </style>
 </head>
 <body>
 
 <div class="container mt-5">
-    <h1 class="text-center">Análises Esportivas</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Logo_Futebol_Brasileirao.svg/1920px-Logo_Futebol_Brasileirao.svg.png" alt="Logo" class="header-logo">
+    <h1>Análises Esportivas</h1>
     <div id="games" class="row"></div>
 
     <h2 class="mt-5">Análise da IA</h2>
     <textarea id="analysisInput" class="form-control" rows="3" placeholder="Digite suas observações ou resultados da análise aqui..."></textarea>
-    <button id="generateAnalysis" class="btn btn-primary mt-3">Gerar Análise</button>
+    <button id="generateAnalysis" class="btn btn-light mt-3">Gerar Análise</button>
     <div id="aiResponse" class="mt-4"></div>
 </div>
 
@@ -83,7 +91,7 @@
         const gamesContainer = document.getElementById('games');
         games.forEach(game => {
             const col = document.createElement('div');
-            col.className = 'col-md-4 text-center game-card';
+            col.className = 'col-md-4 game-card';
 
             col.innerHTML = `
                 <h5>${game.home.name} vs ${game.away.name}</h5>
