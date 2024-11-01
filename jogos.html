@@ -47,13 +47,20 @@
             margin-top: 10px;
             font-size: 18px;
         }
-        .btn-more {
+        .btn-more, .btn-analyze {
             margin-top: 20px;
             background-color: #FFCC00;
             color: #2c3e50;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
+        }
+        .analysis-card {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -109,8 +116,28 @@
         <button class="btn-more" onclick="window.location.href='more-details.html'">
             Ver Mais <i class="fas fa-plus"></i>
         </button>
+        <button class="btn-analyze" onclick="toggleAnalysis()">
+            Analisar Jogo com IA <i class="fas fa-microchip"></i>
+        </button>
+
+        <div class="analysis-card" id="analysisCard">
+            <h5>Análise do Jogo</h5>
+            <p><strong>Arsenal:</strong> Com uma média de 3 gols por jogo e apenas 1 cartão amarelo, o Arsenal demonstra uma sólida performance ofensiva.</p>
+            <p><strong>Chelsea:</strong> Embora Chelsea tenha um desempenho decente, com 2 gols por jogo, sua disciplina tem sido questionável com 2 cartões amarelos e 1 vermelho.</p>
+            <p><strong>Conclusão:</strong> Com base nas estatísticas, o Arsenal tem mais chances de vitória nesta partida.</p>
+        </div>
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        function toggleAnalysis() {
+            const analysisCard = document.getElementById('analysisCard');
+            if (analysisCard.style.display === 'none' || analysisCard.style.display === '') {
+                analysisCard.style.display = 'block';
+            } else {
+                analysisCard.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
