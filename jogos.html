@@ -28,6 +28,7 @@
             padding: 20px;
             margin-bottom: 20px;
             transition: transform 0.2s;
+            text-align: center; /* Centraliza o texto dentro do card */
         }
         .game-card:hover {
             transform: scale(1.05);
@@ -91,7 +92,7 @@
         const gamesContainer = document.getElementById('games');
         games.forEach(game => {
             const col = document.createElement('div');
-            col.className = 'col-md-4 game-card';
+            col.className = 'col-6 col-md-4 game-card'; // Mudança para 2 colunas em telas pequenas
 
             col.innerHTML = `
                 <h5>${game.home.name} vs ${game.away.name}</h5>
