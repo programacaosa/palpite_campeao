@@ -11,12 +11,11 @@
             text-align: center;
             padding-top: 20px;
         }
-        .scoreboard {
-            background: rgba(0, 0, 0, 0.5);
+        .header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
             border-radius: 10px;
-            padding: 20px;
-            display: inline-block;
-            max-width: 100%;
+            margin-bottom: 20px;
         }
         .team-logo {
             width: 80px;
@@ -44,9 +43,24 @@
             padding: 15px;
             margin-top: 10px;
         }
+        .odds {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .btn-more {
+            margin-top: 20px;
+            background-color: #FFCC00;
+            color: #2c3e50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img alt="Logo" src="https://your-logo-url.com/logo.png" width="100" />
+    </div>
     <div class="container">
         <div class="scoreboard">
             <div class="icons">
@@ -60,11 +74,13 @@
                 <div class="text-center">
                     <img alt="Arsenal logo" class="team-logo" src="https://storage.googleapis.com/a1aa/image/SaBuL3BCrZYLAFyjmC1TYB2KBfVjBPezk4ehvGEpYlohrZZnA.jpg"/>
                     <div class="team-name">Arsenal</div>
+                    <div class="odds">Odds: 2.5</div>
                 </div>
                 <div class="score">0 - 0</div>
                 <div class="text-center">
                     <img alt="Chelsea logo" class="team-logo" src="https://storage.googleapis.com/a1aa/image/fyu40YseCYnQy0hLAKhjdVPgXp240LzyJZx7AkGIXfccrZZnA.jpg"/>
                     <div class="team-name">Chelsea</div>
+                    <div class="odds">Odds: 3.0</div>
                 </div>
             </div>
         </div>
@@ -89,7 +105,12 @@
                 </div>
             </div>
         </div>
+
+        <button class="btn-more" onclick="window.location.href='more-details.html'">
+            Ver Mais <i class="fas fa-plus"></i>
+        </button>
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
