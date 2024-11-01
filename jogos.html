@@ -1,109 +1,290 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Schedule</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <style>
-        body {
-            background-color: #0a1f44;
-            font-family: Arial, sans-serif;
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Palpite Campeão
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            background-color: #0A1A3A;
             color: white;
-            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            background-color: #0A1A3A;
             padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .header img {
+    width: 150px;
+    margin-right: 50px; /* Add margin to create space */
+}
+
+        .header .btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #FFCC00;
+            color: #0A1A3A;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+        }
+        .leagues {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .leagues img {
+            width: 50px;
+            margin: 0 10px;
+        }
+        .tabs {
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
+            margin: 20px 0;
         }
-        .container {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .match {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
-            display: flex;
-            flex-direction: column; /* Mantém os itens em coluna */
-            align-items: center;
-        }
-        .match-header {
-            text-align: center;
-            font-size: 10px; /* Tamanho reduzido */
-            margin-bottom: 5px;
-        }
-        .team {
-            display: flex;
-            justify-content: space-between; /* Alinha os elementos nas extremidades */
-            width: 100%; /* Preenche toda a largura */
-            align-items: center;
-            font-size: 14px; /* Tamanho reduzido */
-        }
-        .team img {
-            width: 25px; /* Tamanho reduzido */
-            height: 25px; /* Tamanho reduzido */
-            margin-right: 5px;
-        }
-        .team-name {
-            flex-grow: 1; /* Permite que o nome do time ocupe o espaço restante */
-            text-align: center; /* Centraliza o texto */
-        }
-        .team-score {
-            margin-left: 5px; /* Margem à esquerda */
-        }
-        .team-score.green {
-            color: #00ff00;
-        }
-        .team-score.red {
-            color: #ff0000;
-        }
-        .star {
+        .tabs button {
+            background-color: #0A1A3A;
             color: white;
-            margin-bottom: 5px; /* Adiciona espaçamento abaixo da estrela */
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
         }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="match">
-            <div class="star">
-                <i class="far fa-star"></i>
-            </div>
-            <div class="match-header">Data • Horário</div>
-            <div class="team">
-                <span class="team-score green">00%</span>
-                <img alt="Team 1 logo" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg"/>
-                <span class="team-name">Time 1</span>
-            </div>
-            <div class="team">
-                <span class="team-name">Time 2</span>
-                <img alt="Team 2 logo" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg"/>
-                <span class="team-score red">00%</span>
-            </div>
-        </div>
-        <!-- Repita o bloco de match conforme necessário -->
-        <div class="match">
-            <div class="star">
-                <i class="far fa-star"></i>
-            </div>
-            <div class="match-header">Data • Horário</div>
-            <div class="team">
-                <span class="team-score green">00%</span>
-                <img alt="Team 1 logo" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg"/>
-                <span class="team-name">Time 1</span>
-            </div>
-            <div class="team">
-                <span class="team-name">Time 2</span>
-                <img alt="Team 2 logo" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg"/>
-                <span class="team-score red">00%</span>
-            </div>
-        </div>
-        <!-- Adicione mais matches conforme necessário -->
+        .tabs .active {
+            background-color: #1A2A4A;
+        }
+        .games {
+            background-color: #1A2A4A;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .game {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0A1A3A;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .game .team {
+            display: flex;
+            align-items: center;
+        }
+        .game .team img {
+            width: 30px;
+            margin-right: 10px;
+        }
+        .game .score {
+            display: flex;
+            align-items: center;
+        }
+        .game .score span {
+            margin: 0 5px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #0A1A3A;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer i {
+            font-size: 24px;
+            color: white;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <img alt="Palpite Campeão Logo" height="50" src="https://storage.googleapis.com/a1aa/image/ePRtEWpnj43kZyaX8d0tDAHSWVEOXGcyyP0L1ryoPmitYW2JA.jpg" width="150"/>
+   <button class="btn">
+    Inscrever-se
+   </button>
+  </div>
+  <img alt="Main Image" class="main-image" height="200" src="https://storage.googleapis.com/a1aa/image/foZHH9t3U63dIS1DqF88YewftrLeKEzp4w4fLmbqqZRAMmldC.jpg" width="600"/>
+  <div class="leagues">
+   <img alt="League 1" height="50" src="https://storage.googleapis.com/a1aa/image/0mNxfaczbt1EekiifqDJfISRgkqR5GXUZFVCV70GQYYbFzyOB.jpg" width="50"/>
+   <img alt="League 2" height="50" src="https://storage.googleapis.com/a1aa/image/ezy93hIaGd3uaKaik4oJ1YWAhkWk6ZjD5Q23Ash6ktWsYW2JA.jpg" width="50"/>
+   <img alt="League 3" height="50" src="https://storage.googleapis.com/a1aa/image/7wWym67CGVbmHZDBGcaY0hUWMvFDWQlidbTv9PeeN8yUxssTA.jpg" width="50"/>
+   <img alt="League 4" height="50" src="https://storage.googleapis.com/a1aa/image/8sgHTYt4KfzhOKSVAYthL4ZGRUdg0impJbMUQK61eRiixssTA.jpg" width="50"/>
+   <img alt="League 5" height="50" src="https://storage.googleapis.com/a1aa/image/JAtqYruDLEINOdxT0IjH1j4dj8lt8LpChh4xsekpr35rYW2JA.jpg" width="50"/>
+   <img alt="League 6" height="50" src="https://storage.googleapis.com/a1aa/image/rJf9Wtmp9ZXwRiRvPGHusMZh6GhS3qhJcRiyq3OHew8jxssTA.jpg" width="50"/>
+  </div>
+  <div class="tabs">
+   <button class="active">
+    Todos os jogos
+   </button>
+   <button>
+    Hoje
+   </button>
+   <button>
+    Favoritos
+   </button>
+  </div>
+  <div class="games">
+   <div class="game">
+    <div class="team">
+     <span>
+      0%
+     </span>
+     <img alt="Team 1" height="30" src="https://storage.googleapis.com/a1aa/image/yLG5fjVfD1v6KUpJ1X5XUReuDCVXLvYpFbvkl7arc5U7iZZnA.jpg" width="30"/>
+     <span>
+      Time 1
+     </span>
     </div>
-</body>
+    <div class="score">
+     <span>
+      Data • Horário
+     </span>
+     <span>
+      X
+     </span>
+    </div>
+    <div class="team">
+     <span>
+      Time 2
+     </span>
+     <img alt="Team 2" height="30" src="https://storage.googleapis.com/a1aa/image/NnpqxMi8np44PJa0O7oFIsBRlRrg0lEZffjuJ4D2z8HaxssTA.jpg" width="30"/>
+     <span>
+      0%
+     </span>
+    </div>
+   </div>
+   <div class="game">
+    <div class="team">
+     <span>
+      0%
+     </span>
+     <img alt="Team 1" height="30" src="https://storage.googleapis.com/a1aa/image/yLG5fjVfD1v6KUpJ1X5XUReuDCVXLvYpFbvkl7arc5U7iZZnA.jpg" width="30"/>
+     <span>
+      Time 1
+     </span>
+    </div>
+    <div class="score">
+     <span>
+      Data • Horário
+     </span>
+     <span>
+      X
+     </span>
+    </div>
+    <div class="team">
+     <span>
+      Time 2
+     </span>
+     <img alt="Team 2" height="30" src="https://storage.googleapis.com/a1aa/image/NnpqxMi8np44PJa0O7oFIsBRlRrg0lEZffjuJ4D2z8HaxssTA.jpg" width="30"/>
+     <span>
+      0%
+     </span>
+    </div>
+   </div>
+   <div class="game">
+    <div class="team">
+     <span>
+      0%
+     </span>
+     <img alt="Team 1" height="30" src="https://storage.googleapis.com/a1aa/image/yLG5fjVfD1v6KUpJ1X5XUReuDCVXLvYpFbvkl7arc5U7iZZnA.jpg" width="30"/>
+     <span>
+      Time 1
+     </span>
+    </div>
+    <div class="score">
+     <span>
+      Data • Horário
+     </span>
+     <span>
+      X
+     </span>
+    </div>
+    <div class="team">
+     <span>
+      Time 2
+     </span>
+     <img alt="Team 2" height="30" src="https://storage.googleapis.com/a1aa/image/NnpqxMi8np44PJa0O7oFIsBRlRrg0lEZffjuJ4D2z8HaxssTA.jpg" width="30"/>
+     <span>
+      0%
+     </span>
+    </div>
+   </div>
+   <div class="game">
+    <div class="team">
+     <span>
+      0%
+     </span>
+     <img alt="Team 1" height="30" src="https://storage.googleapis.com/a1aa/image/yLG5fjVfD1v6KUpJ1X5XUReuDCVXLvYpFbvkl7arc5U7iZZnA.jpg" width="30"/>
+     <span>
+      Time 1
+     </span>
+    </div>
+    <div class="score">
+     <span>
+      Data • Horário
+     </span>
+     <span>
+      X
+     </span>
+    </div>
+    <div class="team">
+     <span>
+      Time 2
+     </span>
+     <img alt="Team 2" height="30" src="https://storage.googleapis.com/a1aa/image/NnpqxMi8np44PJa0O7oFIsBRlRrg0lEZffjuJ4D2z8HaxssTA.jpg" width="30"/>
+     <span>
+      0%
+     </span>
+    </div>
+   </div>
+   <div class="game">
+    <div class="team">
+     <span>
+      0%
+     </span>
+     <img alt="Team 1" height="30" src="https://storage.googleapis.com/a1aa/image/yLG5fjVfD1v6KUpJ1X5XUReuDCVXLvYpFbvkl7arc5U7iZZnA.jpg" width="30"/>
+     <span>
+      Time 1
+     </span>
+    </div>
+    <div class="score">
+     <span>
+      Data • Horário
+     </span>
+     <span>
+      X
+     </span>
+    </div>
+    <div class="team">
+     <span>
+      Time 2
+     </span>
+     <img alt="Team 2" height="30" src="https://storage.googleapis.com/a1aa/image/NnpqxMi8np44PJa0O7oFIsBRlRrg0lEZffjuJ4D2z8HaxssTA.jpg" width="30"/>
+     <span>
+      0%
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="footer">
+   <i class="fas fa-home">
+   </i>
+   <i class="fas fa-search">
+   </i>
+   <i class="fas fa-book">
+   </i>
+   <i class="fas fa-user">
+   </i>
+  </div>
+ </body>
 </html>
