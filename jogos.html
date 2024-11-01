@@ -1,22 +1,27 @@
-<html>
- <head>
-  <title>
-   Match Schedule
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Schedule</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
             background-color: #0a1f44;
             font-family: Arial, sans-serif;
             color: white;
+            margin: 0;
+            padding: 20px; /* Adicionado padding */
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* Coluna para melhor ajuste em dispositivos móveis */
             height: 100vh;
-            margin: 0;
         }
         .container {
-            width: 400px;
+            width: 100%; /* Ajuste a largura para 100% */
+            max-width: 400px; /* Máximo de 400px */
+            margin: 0 auto; /* Centraliza a container */
         }
         .match {
             background-color: rgba(255, 255, 255, 0.1);
@@ -24,8 +29,8 @@
             padding: 10px;
             margin-bottom: 10px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column; /* Alinha em coluna */
+            align-items: center; /* Centraliza o conteúdo */
         }
         .match-header {
             text-align: center;
@@ -35,6 +40,8 @@
         .team {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            width: 100%; /* Preenche toda a largura */
         }
         .team img {
             width: 30px;
@@ -43,6 +50,8 @@
         }
         .team-name {
             font-size: 18px;
+            flex-grow: 1; /* Permite que o nome do time ocupe o espaço restante */
+            text-align: center; /* Centraliza o texto */
         }
         .team-score {
             font-size: 14px;
@@ -58,145 +67,44 @@
             color: white;
             margin-right: 10px;
         }
-  </style>
- </head>
- <body>
-  <div class="container">
-   <div class="match">
-    <div class="star">
-     <i class="far fa-star">
-     </i>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="match">
+            <div class="star">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="team">
+                <span class="team-score green">00%</span>
+                <img alt="Team 1 logo" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg"/>
+                <span class="team-name">Time 1</span>
+            </div>
+            <div class="match-header">Data • Horário</div>
+            <div class="team">
+                <span class="team-name">Time 2</span>
+                <img alt="Team 2 logo" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg"/>
+                <span class="team-score red">00%</span>
+            </div>
+        </div>
+        <!-- Repita os blocos de match conforme necessário -->
+        <div class="match">
+            <div class="star">
+                <i class="far fa-star"></i>
+            </div>
+            <div class="team">
+                <span class="team-score green">00%</span>
+                <img alt="Team 1 logo" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg"/>
+                <span class="team-name">Time 1</span>
+            </div>
+            <div class="match-header">Data • Horário</div>
+            <div class="team">
+                <span class="team-name">Time 2</span>
+                <img alt="Team 2 logo" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg"/>
+                <span class="team-score red">00%</span>
+            </div>
+        </div>
+        <!-- Adicione mais matches conforme necessário -->
     </div>
-    <div class="team">
-     <span class="team-score green">
-      00%
-     </span>
-     <img alt="Team 1 logo" height="30" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg" width="30"/>
-     <span class="team-name">
-      Time 1
-     </span>
-    </div>
-    <div class="match-header">
-     Data • Horário
-    </div>
-    <div class="team">
-     <span class="team-name">
-      Time 2
-     </span>
-     <img alt="Team 2 logo" height="30" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg" width="30"/>
-     <span class="team-score red">
-      00%
-     </span>
-    </div>
-   </div>
-   <div class="match">
-    <div class="star">
-     <i class="far fa-star">
-     </i>
-    </div>
-    <div class="team">
-     <span class="team-score green">
-      00%
-     </span>
-     <img alt="Team 1 logo" height="30" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg" width="30"/>
-     <span class="team-name">
-      Time 1
-     </span>
-    </div>
-    <div class="match-header">
-     Data • Horário
-    </div>
-    <div class="team">
-     <span class="team-name">
-      Time 2
-     </span>
-     <img alt="Team 2 logo" height="30" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg" width="30"/>
-     <span class="team-score red">
-      00%
-     </span>
-    </div>
-   </div>
-   <div class="match">
-    <div class="star">
-     <i class="far fa-star">
-     </i>
-    </div>
-    <div class="team">
-     <span class="team-score green">
-      00%
-     </span>
-     <img alt="Team 1 logo" height="30" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg" width="30"/>
-     <span class="team-name">
-      Time 1
-     </span>
-    </div>
-    <div class="match-header">
-     Data • Horário
-    </div>
-    <div class="team">
-     <span class="team-name">
-      Time 2
-     </span>
-     <img alt="Team 2 logo" height="30" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg" width="30"/>
-     <span class="team-score red">
-      00%
-     </span>
-    </div>
-   </div>
-   <div class="match">
-    <div class="star">
-     <i class="far fa-star">
-     </i>
-    </div>
-    <div class="team">
-     <span class="team-score green">
-      00%
-     </span>
-     <img alt="Team 1 logo" height="30" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg" width="30"/>
-     <span class="team-name">
-      Time 1
-     </span>
-    </div>
-    <div class="match-header">
-     Data • Horário
-    </div>
-    <div class="team">
-     <span class="team-name">
-      Time 2
-     </span>
-     <img alt="Team 2 logo" height="30" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg" width="30"/>
-     <span class="team-score red">
-      00%
-     </span>
-    </div>
-   </div>
-   <div class="match">
-    <div class="star">
-     <i class="far fa-star">
-     </i>
-    </div>
-    <div class="team">
-     <span class="team-score green">
-      00%
-     </span>
-     <img alt="Team 1 logo" height="30" src="https://storage.googleapis.com/a1aa/image/ptITwuvF3kJMPZjXFXpAfOLXVJeQzeTDMJLp1C3WzoqFfxyOB.jpg" width="30"/>
-     <span class="team-name">
-      Time 1
-     </span>
-    </div>
-    <div class="match-header">
-     Data • Horário
-    </div>
-    <div class="team">
-     <span class="team-name">
-      Time 2
-     </span>
-     <img alt="Team 2 logo" height="30" src="https://storage.googleapis.com/a1aa/image/IiAWzgY6FJKVBh8PFAfffRfamdxuJBweRApcvskFvYf74HL7E.jpg" width="30"/>
-     <span class="team-score red">
-      00%
-     </span>
-    </div>
-   </div>
-  </div>
- </body>
+</body>
 </html>
