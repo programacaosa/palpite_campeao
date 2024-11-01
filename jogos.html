@@ -3,75 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>League Logos</title>
+    <title>Menu Horizontal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0D163A; /* Cor de fundo atualizada */
+            background-color: #000; /* Fundo preto */
         }
-        .league-logos-container {
-            width: 100%;
+
+        .horizontal-menu {
+            display: flex;
             overflow-x: auto;
             white-space: nowrap;
-            padding: 20px 0;
-            background-color: #0a1f44;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
         }
-        .league-logos-container::-webkit-scrollbar {
-            height: 8px;
+
+        .horizontal-menu a {
+            color: white; /* Texto em branco */
+            padding: 10px 10px;
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+            margin-right: 10px;
         }
-        .league-logos-container::-webkit-scrollbar-thumb {
-            background-color: #888;
-            border-radius: 4px;
-        }
-        .league-logo {
-            display: inline-block;
-            margin: 0 10px;
-            border-radius: 50%;
-            overflow: hidden;
-            width: 50px;
-            height: 50px;
-            vertical-align: middle;
-        }
-        .league-logo img {
-            width: 100%;
-            height: 70%;
-            object-fit: cover;
-        }
-        .league-logo a {
-            display: block;
+
+        .horizontal-menu a:hover {
+            text-decoration: underline;
         }
     </style>
+    <script>
+        function openAndClose(link) {
+            window.open(link, '_self'); // Abre a nova tela na mesma aba
+            window.close(); // Fecha a tela atual
+        }
+    </script>
 </head>
 <body>
-    <div class="league-logos-container">
-        <div class="league-logo">
-            <a href="https://campeao.palpitecampeao.app/destaques/" target="_blank">
-                <img src="https://i.pinimg.com/564x/6c/21/07/6c21076453f08a04809efe306709a6b5.jpg" alt="Liga 1">
-            </a>
-        </div>
-        <div class="league-logo">
-            <a href="https://campeao.palpitecampeao.app/destaques-copy/" target="_blank">
-                <img src="https://i.pinimg.com/564x/de/cb/f6/decbf66439be5a7bb12d21e323f98f3c.jpg" alt="Liga 2">
-            </a>
-        </div>
-        <div class="league-logo">
-            <a href="https://campeao.palpitecampeao.app/destaques-copy-2/" target="_blank">
-                <img src="https://i.pinimg.com/564x/98/b4/7e/98b47ec7996bc3d60299fc875969f952.jpg" alt="Liga 3">
-            </a>
-        </div>
-        <div class="league-logo">
-            <a href="https://campeao.palpitecampeao.app/destaques-copy-3/" target="_blank">
-                <img src="https://i.pinimg.com/564x/6f/b2/b4/6fb2b46712df7215cd72e338879393ed.jpg" alt="Liga 4">
-            </a>
-        </div>
-        <div class="league-logo">
-            <a href="URL_DA_TELA_5.html" target="_blank">
-                <img src="https://i.pinimg.com/564x/5d/8c/b4/5d8cb4b0506182f1931ced5e00d587a5.jpg" alt="Liga 5">
-            </a>
-        </div>
+    <div class="horizontal-menu">
+        <a href="#" onclick="openAndClose('partida.html')">Partida</a>
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-2-copy/')">Palpite</a>
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-copy-3-copy/')">Médias</a>
+        <a href="#" onclick="openAndClose('acimas.html')">Acimas</a>
+        <a href="#" onclick="openAndClose('cartoes.html')">Cartões</a>
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-copy-2-copy/')">Escanteios</a>
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-copy-copy-2-copy-copy-2/')">Gols</a>
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-copy-copy-copy-3/')">Casa</a>
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-copy-copy-3/')">Geral</a> 
+        <a href="#" onclick="openAndClose('https://campeao.palpitecampeao.app/15-set-2024-copy-copy-copy-copy-copy-copy/')">Fora</a>
     </div>
 </body>
 </html>
